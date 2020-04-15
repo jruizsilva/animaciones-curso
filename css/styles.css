@@ -1,0 +1,604 @@
+/* Fuentes */
+@font-face{
+    font-family: "BebasNeue";
+    src: url(fonts/BebasNeue.otf) format("opentype");
+}
+@font-face{
+    font-family: "TrebuchetMS";
+    src: url(fonts/TrebuchetMS.ttf) format("truetype");
+}
+@font-face{
+    font-family: "WebSymbols";
+    src: url(fonts/WebSymbols-Regular.otf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* Generales */
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    background-image: url(../img/pattern.png);
+}
+.clearfix{
+    clear: both;
+}
+/* Inicio WebSymbols */
+.gear, .icon{
+    font-family: "WebSymbols";
+}
+/* Fin WebSymbols */
+
+/* Header */
+#header{
+    background-color: black;
+    color: white;
+    height: 54px;
+    padding: 8px 0;
+    margin-bottom: 25px;
+}
+.wrap{
+    width: 1150px;
+    margin: 0 auto;
+}
+#logo{
+    background-color: #37BCF9;
+    width: 200px;
+    height: 54px;
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+    transition: 200ms;
+}
+#logo .gear{
+    float: left;
+    font-size: 30px;
+    margin-left: 35px;
+    margin-top: 10px;
+    animation-name: rotate-gear;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotate-gear{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+#logo:hover .gear{
+    animation: gearBellow 500ms linear;
+}
+@keyframes gearBellow{
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(200%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+#logo h3{
+    float: right;
+    font-family: "BebasNeue";
+    font-size: 40px;
+    letter-spacing: 1px;
+    margin-right: 55px;
+    margin-top: 8px;
+}
+#logo:hover {
+    background-color: #ccc;
+    color: black;
+    border-radius: 2px;
+}
+#logo:hover h3{
+    animation: logoRight 500ms linear;
+}
+@keyframes logoRight{
+    0%{
+        transform: translateX(200%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.menu{
+    float: right;
+}
+.menu ul{
+    padding: 15px;
+}
+.menu ul li{
+    display: inline-block;
+    font-family: 'BebasNeue';
+    letter-spacing: 1px;
+    font-size: 24px;
+    margin: 0 20px;
+}
+.menu ul li:last-child{
+    margin-right: 0;
+}
+.menu ul li a{
+    display: block;
+    color: white;
+    transition: all 300ms;
+}
+.menu ul li a:hover{
+    color: #37BCF9;
+    transform: scale(1.2, 1.2);
+}
+
+/* Inicio del banner */
+#banner{
+    background-image: url(../img/bakbaner.png);
+    width: 97.4%;
+    background-position: -200px -200px;
+    border: 10px solid white;
+    padding: 20px 0px;
+    box-shadow: 0 0 4px gray;
+    animation: backBanner 10s linear;
+    overflow: hidden;
+}
+@keyframes backBanner{
+    from{
+        background-position: 0px 0px;
+    }
+    to{
+        background-position: -200px -200px;
+    }
+}
+#banner h1{
+    color: white;
+    text-align: center;
+    font-family: 'BebasNeue';
+    letter-spacing: 3px;
+    font-size: 45px;
+    text-shadow: 2px 2px 1px black;
+    animation: textBanner 10s linear;
+}
+@keyframes textBanner{
+    0%{
+        transform: translateX(-1000%) scale(5);
+        opacity: 1;
+    }
+    50%{
+        transform: translateX(300%) scale(5);
+        opacity: 1;
+    }
+    75%{
+        transform: translateX(-300%) scale(5);
+        text-shadow: none;
+        color: transparent;
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%) scale(1);
+        opacity: 1;
+        color: white;
+        text-shadow: 2px 2px 1px black;
+    }
+}
+/* Fin del banner */
+
+/* Inicio cards */
+#cards{
+    margin-top: 70px;
+}
+.card{
+    background-color: white;
+    width: 200px;
+    height: 300px;
+    float: left;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px #ddd;
+    margin-right: 32px;
+    transition: all 300ms;
+    overflow: hidden;
+}
+.card:last-child{
+    margin-right: 0;
+}
+.card:hover{
+    background-color: black;
+}
+.icon{
+    height: 120px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 120px;
+    transition: all 300ms;
+}
+.card:hover .icon{
+    color: #37BCF9;
+    animation: showIcon 300ms linear;
+    font-size: 70px;
+}
+@keyframes showIcon{
+    from{
+        transform: translateY(-200%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+.category{
+    height: 56px;
+    font-family: 'Trebuchet MS';
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #00538C;
+    transition: all 300ms;
+}
+.card:hover .category{
+    color: white;
+    animation: showCategory 300ms linear;
+}
+@keyframes showCategory{
+    from{
+        transform: translateY(-300%);
+        color: black;
+    }
+    to{
+        transform: translateY(0%);
+        color: white;
+    }
+}
+.description{
+    color: rgb(0, 111, 185);
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    font-family: 'Trebuchet MS';
+}
+.card:hover .description{
+    color: white;
+    animation: showDescription 400ms linear;
+}
+@keyframes showDescription{
+    from{
+        transform: translateX(-200%);
+        color: black;
+    }
+    to{
+        transform: translateX(0%);
+        color: white;
+    }
+}
+/* Fin cards */
+
+/* Inicio de lateral */
+#lateral{
+    width: 300px;
+    float: right;
+    min-height: 1000px;
+    margin-top: 125px;
+}
+#lateral h3{
+    font-family: 'BebasNeue';
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 32px;
+    background: url(../img/pxgray.png), white;
+    height: 46px;
+    line-height: 52px;
+    padding-left: 18px;
+    box-shadow: 0 1px 0 #444, 1px 2px 0 #444, 2px 3px 0 #444, 3px 4px 0 #444;
+}
+#search{
+    width: 80%;
+    margin: 15px auto;
+    height: 30px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #ccc inset;
+}
+#search form{
+    padding-top: 2px;
+}
+#search input[type="text"]{
+    width: 80%;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    padding-left: 15px;
+    display: inline-block;
+    color: #aaa;
+    transition: 300ms;
+}
+#search input[type="text"]:focus{
+    color: #555;
+}
+#search span[class="icon-search"]{
+    cursor: pointer;
+    display: inline-block;
+    height: 18px;
+    font-size: 17px;
+    margin-left: 5px;
+    background-color: transparent;
+}
+.aside-box{
+    width: 80%;
+    margin: 30px auto;
+    background-color: white;
+    min-height: 208px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 3px 7px rgba(0, 0, 0, 0.3), 0 1px white inset, 0 -3px 2px rgba(0, 0, 0, 0.3) inset;
+}
+#login input[type="email"],
+#login input[type="password"]{
+    display: block;
+    width: 76%;
+    height: 30px;
+    margin: 20px auto 20px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: -1px -1px 1px #ccc;
+    color: #aaa;
+    padding-left: 32px;
+}
+#login input[type="email"]:focus,
+#login input[type="password"]:focus{
+    color: #555;
+}
+#login #user,
+#login #password{
+    display: block;
+    font-size: 18px;
+    position: absolute;
+    margin-top: -45px;
+    margin-left: 20px;
+}
+#login #password{
+    font-size: 22px;
+    margin-top: -44px;
+    margin-left: 22px;
+}
+input[type="submit"],
+input[type="reset"]{
+    color: white;
+    background: linear-gradient(to bottom, #2DA1CB 0%, #3EB7E4 100%);
+    margin-left: 24px;
+    border: 1px solid #156785;
+    width: 80px;
+    height: 33px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-family: "TrebuchetMS";
+    text-align: center;
+    font-size: 15px;
+    transition: all 300ms;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 3px rgb(78, 78, 78);
+}
+#login a{
+    color: #000;
+    margin-left: 20px;
+    margin-bottom: 4px;
+    display: inline-block;
+    font-family: "TrebuchetMS";
+    font-size: 14px;
+    transition: 300ms;
+}
+#login a:last-child{
+    margin-bottom: 30px;
+    margin-left: 15.5px;
+}
+#login a:hover{
+    color: #2DA1CB;
+    text-decoration: underline;
+}
+#social{
+    min-height: 190px;
+}
+#social a{
+    display: block;
+    color: black;
+    font-size: 30px;
+    margin: 24px 0 0 24px;
+}
+#social .overlay{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: absolute;
+    border: 3px solid white;
+    text-shadow: 0 0 1px #ccc;
+    background-color: #f4f7fe;
+    padding: 3px;
+    height: 20px;
+    line-height: 20px;
+    box-shadow: 0 0 4px #ccc;
+    margin-top: -30px;
+    margin-left: 70px;
+    transform: translateX(-80%);
+    opacity: 0;
+    transition: all 400ms;
+}
+#social div:hover .overlay{
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+/* Fin de lateral */
+
+/* Inicio articles */
+#articles{
+    float: left;
+    width: 800px;
+    margin-top: 125px;
+}
+#articles h2{
+    text-align: center;
+    font-family: "BebasNeue";
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    height: 75px;
+    line-height: 75px;
+    background: url(../img/pxgray.png), white;
+    box-shadow: 0 1px 0 #444, 1px 2px 0 #444, 2px 3px 0 #444, 3px 4px 0 #444;
+}
+#articles article{
+    background-color: white;
+    font-family: "TrebuchetMS";
+    margin-top: 40px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px #ddd;
+}
+#articles article h4{
+    font-size: 23px;
+    margin: 15px;
+}
+#articles article h4 a{
+    color: #00538C;
+}
+#articles article p{
+    margin: 15px 10px;
+    line-height: 18px;
+}
+#articles .data{
+    float: right;
+    color: white;
+    background-color: #393D3F;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 0px 0px 0px 5px;
+}
+#articles .data span{
+    margin-right: 12px;
+}
+#articles .data span:last-child{
+    margin-right: 0px;
+}
+#articles #blog{
+    margin-top: 60px;
+    height: 120px;
+    text-align: center;
+    line-height: 120px;
+    transition: all 1s;
+}
+#articles #blog a{
+    font-family: "BebasNeue";
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #00538C;
+    display: block;
+    transition: all 1s;
+}
+#articles #blog:hover{
+    border: 10px solid #37BCF9;
+    border-radius: 240px;
+    box-shadow: 0px 0px 10px gray;
+    background-color: #333;
+    animation: blink 10s infinite linear;
+}
+#articles #blog:hover a{
+    color: white;
+    text-shadow: 1px 1px 1px black,1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 6px 1px black;  
+}
+@keyframes blink{
+    0%{
+        border: 10px solid #37BCF9;
+    }
+    25%{
+        border: 10px solid #0f4c75;
+    }
+    50%{
+        border: 10px solid #3282b8;
+    }
+    75%{
+        border: 10px solid #bbe1fa;
+    }
+    100%{
+        border: 10px solid #37BCF9;
+    }
+}
+/* Fin articles */
+
+/* Inicio footer */
+#footer{
+    background-color: black;
+    height: 470px;
+    overflow: hidden;
+    font-family: "TrebuchetMS";
+    color: white;
+    margin-top: 30px;
+}
+#footer .wrap > div,
+#footer #menu_footer{
+    float: left;
+    width: 33%;
+    margin: 40px 0;
+}
+#footer h5{
+    background: url(../img/pxgray.png), white;
+    text-align: center;
+    border-radius: 5px;
+    width: 320px;
+    height: 50px;
+    line-height: 55px;
+    font-size: 40px;
+    font-family: "BebasNeue";
+    letter-spacing: 2px;
+    color: black;
+    margin-bottom: 10px;
+}
+#footer a{
+    color: #37BCF9;
+}
+#footer #menu_footer ul{
+    width: 240px;
+    margin: 20px 0px 0px 20px;
+}
+#footer #menu_footer ul li{
+    list-style: circle;
+    color: white;
+    font-size: 25px;
+    border-bottom: 1px solid #ccc;
+}
+#footer #menu_footer ul li a{
+    margin: 20px 0;
+    display: block;
+    transition: all 300ms;
+}
+#footer #menu_footer ul li:hover a{
+    padding-left: 40px;
+    color: white;
+}
+
+#footer #navigation iframe{
+    width: 320px;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #ccc;
+}
+#footer #info_footer #developed img{
+    margin-bottom: 10px;
+}
+#footer #info_footer #browsers img{
+    width: 45px;
+    margin: 4px 4px 8px 0px;
+}
+#footer #info_footer #browsers img:last-child{
+    margin-right: 0;
+}
+
+/* Fin footer */
+
